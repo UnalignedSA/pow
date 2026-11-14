@@ -1,0 +1,28 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+    paths-ignore: ["**.md", ".github/assets/**", "LICENSE"]
+  pull_request:
+    paths-ignore: ["**.md", ".github/assets/**", "LICENSE"]
+
+permissions:
+  contents: read
+
+jobs:
+  rust:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - run: cargo fmt --check
+      - run: cargo clippy --locked -- -D warnings
+      - run: cargo test --locked
+
+  # The committed web/solver.wasm must be exactly what the source builds to.
+  solver:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - run: ./build-wasm.sh
+      - run: git diff --exit-code web/solver.wasm

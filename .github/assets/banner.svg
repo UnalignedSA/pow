@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="440" viewBox="0 0 1280 440" role="img" aria-labelledby="t d">
+  <title id="t">Unaligned Proof of Work</title>
+  <desc id="d">No IP addresses, no captcha: a small Equi-X puzzle protects signup and login. Rust crate, WebAssembly solver, reproducible build.</desc>
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#1c1a18" stroke-width="1"/>
+    </pattern>
+    <linearGradient id="fade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#0d0c0b" stop-opacity="1"/>
+      <stop offset="0.55" stop-color="#0d0c0b" stop-opacity="0.6"/>
+      <stop offset="1" stop-color="#0d0c0b" stop-opacity="0"/>
+    </linearGradient>
+    <style>
+      .display { font-family: 'Unbounded', 'Inter', 'Segoe UI', -apple-system, 'Helvetica Neue', Arial, sans-serif; font-weight: 700; }
+      .sans { font-family: 'Inter', 'Segoe UI', -apple-system, 'Helvetica Neue', Arial, sans-serif; }
+      .mono { font-family: 'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace; }
+    </style>
+  </defs>
+
+  <rect width="1280" height="440" fill="#0d0c0b"/>
+  <rect width="1280" height="440" fill="url(#grid)"/>
+  <rect width="1280" height="440" fill="url(#fade)"/>
+
+  <!-- logo -->
+  <rect x="72" y="64" width="22" height="22" fill="#edebe7"/>
+  <rect x="84" y="76" width="22" height="22" fill="#e5322d"/>
+  <text x="122" y="91" class="display" font-size="26" fill="#edebe7">Unaligned</text>
+
+  <!-- title -->
+  <text x="72" y="198" class="display" font-size="66" fill="#edebe7" letter-spacing="-1">Proof of Work<tspan fill="#e5322d">.</tspan></text>
+  <text x="74" y="252" class="sans" font-size="26" fill="#9a958e">No IP, no captcha: a puzzle guards signup and login.</text>
+
+  <!-- chips -->
+  <g class="mono" font-size="15" fill="#edebe7" letter-spacing="1">
+    <rect x="72" y="320" width="96" height="40" fill="none" stroke="#3a3733"/>
+    <text x="120" y="345" text-anchor="middle">EQUI-X</text>
+    <rect x="178" y="320" width="80" height="40" fill="none" stroke="#3a3733"/>
+    <text x="218" y="345" text-anchor="middle">RUST</text>
+    <rect x="268" y="320" width="152" height="40" fill="none" stroke="#3a3733"/>
+    <text x="344" y="345" text-anchor="middle">WEBASSEMBLY</text>
+    <rect x="430" y="320" width="208" height="40" fill="none" stroke="#3a3733"/>
+    <text x="534" y="345" text-anchor="middle">REPRODUCIBLE BUILD</text>
+  </g>
+
+  <!-- squares motif -->
+  <rect x="880" y="78" width="190" height="190" fill="#edebe7"/>
+  <rect x="984" y="182" width="190" height="190" fill="#e5322d"/>
+
+  <!-- a mini terminal on the motif -->
+  <g class="mono" font-size="14">
+    <rect x="780" y="296" width="310" height="96" fill="#151412" stroke="#262422"/>
+    <circle cx="796" cy="312" r="4" fill="#3a3733"/>
+    <circle cx="810" cy="312" r="4" fill="#3a3733"/>
+    <circle cx="824" cy="312" r="4" fill="#3a3733"/>
+    <text x="796" y="342" fill="#615d57">$ <tspan fill="#edebe7">./build-wasm.sh</tspan></text>
+    <text x="796" y="364" fill="#9a958e">50f00552…49852e01  solver.wasm</text>
+    <text x="796" y="384" fill="#7fb685">same file on every machine</text>
+  </g>
+
+  <text x="1208" y="414" text-anchor="end" class="mono" font-size="15" fill="#615d57">unaligned.pw</text>
+  <rect y="434" width="1280" height="6" fill="#e5322d"/>
+</svg>

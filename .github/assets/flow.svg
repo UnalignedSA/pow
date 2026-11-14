@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="350" viewBox="0 0 1280 350" role="img" aria-labelledby="t d">
+  <title id="t">How the proof of work runs</title>
+  <desc id="d">The server signs a challenge and stores nothing; the browser solves it in a worker; the form sends the solution; the server verifies it in microseconds and accepts it once.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#9a958e"/>
+    </marker>
+    <style>
+      .display { font-family: 'Unbounded', 'Inter', 'Segoe UI', -apple-system, 'Helvetica Neue', Arial, sans-serif; font-weight: 700; }
+      .sans { font-family: 'Inter', 'Segoe UI', -apple-system, 'Helvetica Neue', Arial, sans-serif; }
+      .mono { font-family: 'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace; }
+      .card { fill: #151412; stroke: #262422; }
+      .num { fill: #e5322d; }
+      .h { fill: #edebe7; font-size: 21px; }
+      .code { fill: #edebe7; font-size: 14px; }
+      .muted { fill: #9a958e; font-size: 15px; }
+      .faint { fill: #615d57; font-size: 13px; letter-spacing: 1.5px; }
+    </style>
+  </defs>
+
+  <rect width="1280" height="350" fill="#0d0c0b"/>
+  <text x="56" y="62" class="mono faint">ON EVERY SIGNUP AND LOGIN</text>
+
+  <g transform="translate(56 92)">
+    <rect class="card" width="262" height="196"/>
+    <rect width="34" height="34" class="num"/>
+    <text x="17" y="23" text-anchor="middle" class="display" font-size="16" fill="#0d0c0b">1</text>
+    <text x="24" y="78" class="sans h" font-weight="600">Challenge</text>
+    <rect x="24" y="96" width="132" height="28" fill="#0d0c0b" stroke="#262422"/>
+    <text x="34" y="115" class="mono code">seed · effort</text>
+    <text x="24" y="152" class="sans muted">Signed by the server,</text>
+    <text x="24" y="174" class="sans muted">which stores nothing.</text>
+  </g>
+
+  <g transform="translate(362 92)">
+    <rect class="card" width="262" height="196" style="stroke:#e5322d"/>
+    <rect width="34" height="34" class="num"/>
+    <text x="17" y="23" text-anchor="middle" class="display" font-size="16" fill="#0d0c0b">2</text>
+    <text x="24" y="78" class="sans h" font-weight="600">Solve</text>
+    <rect x="24" y="96" width="116" height="28" fill="#0d0c0b" stroke="#262422"/>
+    <text x="34" y="115" class="mono code">solver.wasm</text>
+    <text x="24" y="152" class="sans muted">In a web worker, while</text>
+    <text x="24" y="174" class="sans muted">you fill in the form.</text>
+  </g>
+
+  <g transform="translate(668 92)">
+    <rect class="card" width="262" height="196"/>
+    <rect width="34" height="34" class="num"/>
+    <text x="17" y="23" text-anchor="middle" class="display" font-size="16" fill="#0d0c0b">3</text>
+    <text x="24" y="78" class="sans h" font-weight="600">Send</text>
+    <rect x="24" y="96" width="156" height="28" fill="#0d0c0b" stroke="#262422"/>
+    <text x="34" y="115" class="mono code">nonce · solution</text>
+    <text x="24" y="152" class="sans muted">Travels with the form.</text>
+    <text x="24" y="174" class="sans muted">Nothing about you.</text>
+  </g>
+
+  <g transform="translate(974 92)">
+    <rect class="card" width="250" height="196"/>
+    <rect width="34" height="34" class="num"/>
+    <text x="17" y="23" text-anchor="middle" class="display" font-size="16" fill="#0d0c0b">4</text>
+    <text x="24" y="78" class="sans h" font-weight="600">Verify</text>
+    <rect x="24" y="96" width="92" height="28" fill="#0d0c0b" stroke="#262422"/>
+    <text x="34" y="115" class="mono code">verify()</text>
+    <text x="24" y="152" class="sans muted">Checked in microseconds.</text>
+    <text x="24" y="174" class="sans" font-size="15" fill="#7fb685">Accepted exactly once.</text>
+  </g>
+  <path d="M322 190H356" stroke="#9a958e" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M628 190H662" stroke="#9a958e" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M934 190H968" stroke="#9a958e" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="56" y="326" class="sans" font-size="14" fill="#615d57">Under attack, raise the effort: every attempt costs the attacker more. No IP address is read at any step.</text>
+</svg>
